@@ -1,9 +1,5 @@
-<!-- <app-text-component
-  [title]="textComponent.title"
-  [text]="textComponent.text"
-></app-text-component> -->
-
-<app-check [data]="checkBoxList"></app-check>
-{{ checkBoxList }}
-
-{{ valueChild }}
+<app-check
+  [data]="checkBoxList"
+  (parentFunction)="parentFunction($event)"
+></app-check>
+{{ TotalValue }}

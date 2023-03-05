@@ -12,10 +12,7 @@ interface checkBox {
   styleUrls: ['./check.component.scss'],
 })
 export class CheckComponent {
-  //@Input() title: string = '';
   addValue: boolean = false;
-  // @Input() value: number = 0;
-  // @Input() text: string = '';
   @Input() data: checkBox[] = [];
   @Output() parentFunction: EventEmitter<any> = new EventEmitter();
 

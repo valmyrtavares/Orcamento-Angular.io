@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 interface checkBox {
   text: string;
@@ -18,23 +19,14 @@ interface textBox {
 export class MenuBudgetComponent {
   valueChild: boolean = false;
 
-  checkBoxList: checkBox[] = [
-    {
-      text: ', remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      value: 100,
-      title: 'Primeiro Titulo',
-    },
-    {
-      text: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      value: 100,
-      title: 'Segundo Titulo',
-    },
-    {
-      text: 'g, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-      value: 100,
-      title: 'Terceiro Titulo',
-    },
-  ];
+  checkBoxList: checkBox[] = [];
+  constructor(private user: ApiService) {}
+
+  ngOnInit() {
+    this.user.getData().subscribe((res: any) => {
+      this.checkBoxList = res;
+    });
+  }
 
   textComponent: textBox = {
     title: 'Primeiro Item',

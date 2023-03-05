@@ -1,0 +1,16 @@
+<app-text-component
+  [title]="textComponent.title"
+  [text]="textComponent.text"
+></app-text-component>
+
+<!-- <app-check
+  ngFor="let item of checkBoxList"
+  [text]="'item.text'"
+  [title]="'item.title'"
+  handel
+  (parentFunction)="parentFunction($event)"
+></app-check> -->
+
+<app-check [data]="checkBoxList"></app-check>
+
+{{ valueChild }}

@@ -1,0 +1,14 @@
+<div *ngFor="let item of data">
+  <h3 class="check-content__title">{{ item.title }}</h3>
+
+  <div class="check-content__content">
+    <input
+      class="check-content__content__check"
+      type="checkbox"
+      (click)="addingValue()"
+    />
+    <p class="check-content__content__text">
+      {{ item.text }}<span>R$ {{ item.value }}</span>
+    </p>
+  </div>
+</div>

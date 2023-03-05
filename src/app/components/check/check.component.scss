@@ -1,0 +1,23 @@
+.check-content{
+    &__title{
+        color: red;
+        margin: 10px 0 3px 17px;
+        font-weight: bold;
+    }
+    &__content{
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        align-items: flex-start;
+        &__check{
+            height: 23px;  
+           margin: 1rem 5px        
+        }
+        &__text{
+            font-family: arial;           
+            padding: 5px
+            span {
+                color:red;
+            }
+        }
+    }
+}

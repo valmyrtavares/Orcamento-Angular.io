@@ -1,0 +1,10 @@
+<div class="social-events-content">
+  <button
+    class="social-events-content__btn global"
+    *ngFor="let item of eventType"
+    [routerLink]="item.route"
+  >
+    {{ item.type }}
+    {{ item.route }}
+  </button>
+</div>

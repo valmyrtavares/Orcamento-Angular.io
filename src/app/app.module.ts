@@ -7,11 +7,23 @@ import { AppComponent } from './app.component';
 import { ComponentModule } from './components/component.module';
 import { MenuBudgetComponent } from './menu-budget/menu-budget.component';
 import { ShowCaseComponent } from './show-case/show-case.component';
+import { HomeComponent } from './home/home.component';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { RouterModule } from '@angular/router';
+import { SocialEventsComponent } from './social-events/social-events.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuBudgetComponent, ShowCaseComponent],
+  declarations: [
+    AppComponent,
+    MenuBudgetComponent,
+    ShowCaseComponent,
+    HomeComponent,
+    SubmenuComponent,
+    SocialEventsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, ComponentModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
 export class AppModule {}

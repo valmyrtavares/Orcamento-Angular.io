@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-case.component.scss'],
 })
 export class ShowCaseComponent {
-  wumen: any[] = [
+  woman: any[] = [
     {
       id: 1,
       title: 'Estilosa',

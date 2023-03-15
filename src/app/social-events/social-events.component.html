@@ -2,9 +2,11 @@
   <button
     class="social-events-content__btn global"
     *ngFor="let item of eventType"
-    [routerLink]="item.route"
+    [routerLink]="item.route + item.evento"
   >
     {{ item.type }}
     {{ item.route }}
+    {{ item.evento }}
   </button>
 </div>
+<!-- PARAMETRO NA ROTA DA LINHA 5" -->

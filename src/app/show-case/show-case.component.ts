@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-case',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-case.component.scss'],
 })
 export class ShowCaseComponent {
+  id: string;
+  constructor(private route: ActivatedRoute) {
+    this.id = this.route.snapshot.params['aniversario']; //Como pegar a rota e colocar em uma variável
+  }
   woman: any[] = [
     {
       id: 1,

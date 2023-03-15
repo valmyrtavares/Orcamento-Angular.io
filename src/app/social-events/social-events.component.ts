@@ -8,8 +8,23 @@ import { Component } from '@angular/core';
 export class SocialEventsComponent {
   nameEvent: string = 'Casamento';
   eventType: any[] = [
-    { type: 'Casamento', background: 'http://lskdjfl', route: '../submenu' },
-    { type: 'Aniversario', background: 'http://lskdjfl', route: '../showcase' },
-    { type: 'Debutante', background: 'http://lskdjfl', route: './sldkf/sdf' },
+    {
+      type: 'Casamento',
+      evento: '/aniversario',
+      background: 'http://lskdjfl',
+      route: '../submenu',
+    },
+    {
+      type: 'Aniversario',
+      evento: '/aniversario',
+      background: 'http://lskdjfl',
+      route: '../showcase',
+    },
+    {
+      type: 'Debutante',
+      evento: '/aniversario',
+      background: 'http://lskdjfl',
+      route: './sldkf/sdf',
+    },
   ];
 }

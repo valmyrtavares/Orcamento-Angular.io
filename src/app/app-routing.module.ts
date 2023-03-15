@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'events', component: SocialEventsComponent },
   { path: 'submenu', component: SubmenuComponent },
   { path: '', component: HomeComponent },
-  { path: 'showcase', component: ShowCaseComponent },
+  { path: 'showcase/:aniversario', component: ShowCaseComponent }, //rota com parametro
 ];
 
 @NgModule({

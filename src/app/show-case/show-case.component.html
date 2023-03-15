@@ -1,7 +1,8 @@
 <h1>show case</h1>
-<div>
+<div class="show-case">
   <ng-container *ngFor="let item of woman">
-    <div>
+    <div class="show-case img-content">
+      <h3>{{ item.title }}</h3>
       <img [src]="item.image" alt="" />
     </div>
   </ng-container>

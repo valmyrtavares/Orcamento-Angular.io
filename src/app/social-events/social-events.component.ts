@@ -10,19 +10,19 @@ export class SocialEventsComponent {
   eventType: any[] = [
     {
       type: 'Casamento',
-      evento: '/aniversario',
+      evento: '/woman',
       background: 'http://lskdjfl',
-      route: '../submenu',
+      route: '../showcase',
     },
     {
       type: 'Aniversario',
-      evento: '/aniversario',
+      evento: '/ladies',
       background: 'http://lskdjfl',
       route: '../showcase',
     },
     {
       type: 'Debutante',
-      evento: '/aniversario',
+      evento: '/ladies',
       background: 'http://lskdjfl',
       route: './sldkf/sdf',
     },

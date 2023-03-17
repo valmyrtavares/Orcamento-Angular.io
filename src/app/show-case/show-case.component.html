@@ -1,5 +1,7 @@
-<div class="show-case">
-  <ng-container *ngFor="let item of changeApi">
+<div class="show-case" *ngIf="changeApi">
+  {{ changeApi }}
+
+  <ng-container *ngFor="let item of woman">
     <div class="show-case img-content">
       <h3>{{ item.title }}</h3>
       <img [src]="item.image" alt="" />

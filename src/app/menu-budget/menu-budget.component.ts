@@ -25,7 +25,7 @@ export class MenuBudgetComponent {
   constructor(private user: ApiService) {}
 
   ngOnInit() {
-    this.user.getData().subscribe((res: any) => {
+    this.user.getDataCheck().subscribe((res: any) => {
       this.checkBoxList = res;
     });
   }

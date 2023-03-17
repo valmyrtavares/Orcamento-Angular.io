@@ -5,9 +5,17 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  getData() {
-    return this._http.get('http://localhost:3000/checkBoxList');
+  getDataCheck() {
+    return this.http.get('http://localhost:3000/checkBoxList');
   }
+
+  getDataWoman(id: string) {
+    return this.http.get(`http://localhost:3000/${id}`);
+  }
+
+  // getDataLadies() {
+  //   return this.http.get('http://localhost:3000/ladies');
+  // }
 }

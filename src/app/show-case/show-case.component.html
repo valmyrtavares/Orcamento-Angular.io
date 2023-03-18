@@ -1,10 +1,17 @@
-<div class="show-case" *ngIf="changeApi">
-  {{ changeApi }}
-
-  <ng-container *ngFor="let item of woman">
+<button (click)="changeScreen = !changeScreen">
+  {{ changeScreen ? "Orçamento" : "Portifólio" }}
+</button>
+<div class="show-case" *ngIf="changeScreen; else elseBudget">
+  <ng-container *ngFor="let item of showCase">
     <div class="show-case img-content">
       <h3>{{ item.title }}</h3>
       <img [src]="item.image" alt="" />
     </div>
   </ng-container>
 </div>
+<ng-template #elseBudget>
+  <app-menu-budget
+    [fixedBudget]="fixedBudget"
+    [checkBoxList]="checkBoxList"
+  ></app-menu-budget>
+</ng-template>

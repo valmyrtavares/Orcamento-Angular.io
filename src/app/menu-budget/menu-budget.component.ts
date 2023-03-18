@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
+import { FixedBudget, CheckBoxList } from '../model';
 
 interface checkBox {
   text: string;
@@ -11,6 +12,8 @@ interface checkBox {
 interface textBox {
   title: string;
   text: string;
+  entregaPrazo: string;
+  valorInicial: number;
 }
 
 @Component({
@@ -20,8 +23,14 @@ interface textBox {
 })
 export class MenuBudgetComponent {
   TotalValue: number = 0;
+  @Input() checkBoxList: CheckBoxList[] = [];
+  @Input() fixedBudget: FixedBudget = {
+    title: '',
+    text: '',
+    entregaPrazo: '',
+    valorInicial: 0,
+  };
 
-  checkBoxList: checkBox[] = [];
   constructor(private user: ApiService) {}
 
   ngOnInit() {
@@ -29,11 +38,6 @@ export class MenuBudgetComponent {
       this.checkBoxList = res;
     });
   }
-
-  textComponent: textBox = {
-    title: 'Primeiro Item',
-    text: "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-  };
 
   parentFunction(tatalValue: number) {
     this.TotalValue = tatalValue;

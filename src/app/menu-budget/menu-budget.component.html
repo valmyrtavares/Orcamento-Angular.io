@@ -1,5 +1,11 @@
+<h3>{{ fixedBudget.title }}</h3>
+<p>{{ fixedBudget.text }}</p>
+<p>{{ fixedBudget.valorInicial }}</p>
+<p>{{ fixedBudget.entregaPrazo }}</p>
 <app-check
   [data]="checkBoxList"
   (parentFunction)="parentFunction($event)"
 ></app-check>
-{{ TotalValue }}
+<p>
+  Valor final <span>{{ TotalValue }}</span>
+</p>

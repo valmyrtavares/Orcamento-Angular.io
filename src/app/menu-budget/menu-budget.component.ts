@@ -1,19 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FixedBudget, CheckBoxList } from '../model';
+import { DataService } from '../data.service';
+import { Subscription } from 'rxjs';
 
-interface checkBox {
-  text: string;
-  value: number;
-  check: boolean;
-  valueChange: number;
-  title: string;
-}
-interface textBox {
-  title: string;
-  text: string;
-  entregaPrazo: string;
-  valorInicial: number;
+interface pessoa {
+  nome: string;
+  idade: number;
+  profissao: string;
 }
 
 @Component({
@@ -22,7 +16,15 @@ interface textBox {
   styleUrls: ['./menu-budget.component.scss'],
 })
 export class MenuBudgetComponent {
-  TotalValue: number = 0;
+  subscription: Subscription | undefined;
+
+  constructor(private user: ApiService, private data: DataService) {}
+
+  TotalValue: pessoa = {
+    nome: '',
+    idade: 0,
+    profissao: '',
+  };
   @Input() checkBoxList: CheckBoxList[] = [];
   @Input() fixedBudget: FixedBudget = {
     title: '',
@@ -30,8 +32,8 @@ export class MenuBudgetComponent {
     entregaPrazo: '',
     valorInicial: 0,
   };
-
-  constructor(private user: ApiService) {}
+  TotalValueBudget: number = 0;
+  newDataBudget: CheckBoxList[] = [];
 
   ngOnInit() {
     this.user.getDataCheck().subscribe((res: any) => {
@@ -39,7 +41,12 @@ export class MenuBudgetComponent {
     });
   }
 
-  parentFunction(tatalValue: number) {
-    this.TotalValue = tatalValue;
+  parentFunction(totalValue: any) {
+    const { total, newData } = totalValue;
+    this.TotalValueBudget = total;
+    this.newDataBudget = newData;
+  }
+  saveBudget() {
+    this.data.changeMessage(this.newDataBudget);
   }
 }

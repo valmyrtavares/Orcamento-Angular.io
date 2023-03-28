@@ -7,6 +7,11 @@ interface checkBox {
   valueChange: number;
   title: string;
 }
+interface pessoa {
+  nome: string;
+  idade: number;
+  profissao: string;
+}
 
 @Component({
   selector: 'app-check',
@@ -14,10 +19,17 @@ interface checkBox {
   styleUrls: ['./check.component.scss'],
 })
 export class CheckComponent {
+  pessoa: pessoa = {
+    nome: 'Valmyr Tavares',
+    idade: 10,
+    profissao: 'programador',
+  };
   total: number = 0;
   addValue: boolean = false;
   @Input() data: checkBox[] = [];
+  @Input() initialValue: number = 0;
   @Output() parentFunction: EventEmitter<any> = new EventEmitter();
+  newData: checkBox[] = [];
 
   addingValue(index: number) {
     if (this.data[index].check === false) {
@@ -27,13 +39,14 @@ export class CheckComponent {
       this.data[index].check = false;
       this.data[index].valueChange = 0;
     }
+    this.newData = this.data.filter((item) => item.check === true);
     this.addTotalValue();
   }
 
   addTotalValue() {
     this.total = this.data.reduce((total, item) => {
       return total + item.valueChange;
-    }, 0);
-    this.parentFunction.emit(this.total);
+    }, this.initialValue);
+    this.parentFunction.emit({ total: this.total, newData: this.newData });
   }
 }

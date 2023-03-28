@@ -4,8 +4,10 @@
 <p>{{ fixedBudget.entregaPrazo }}</p>
 <app-check
   [data]="checkBoxList"
+  [initialValue]="fixedBudget.valorInicial"
   (parentFunction)="parentFunction($event)"
 ></app-check>
 <p>
-  Valor final <span>{{ TotalValue }}</span>
+  Valor final <span>{{ TotalValueBudget }}</span>
 </p>
+<button (click)="saveBudget()">Salvar</button>

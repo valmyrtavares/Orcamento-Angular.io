@@ -1,0 +1,27 @@
+[data-btn="mobile"]{
+    display: none;
+}
+[data-btn="mobile"]::before{      
+    content: '';
+    width: 32px;
+    height: 2px;
+    display: inline-block;
+    background: black;
+    margin-right: 4px;
+    box-shadow: 0 8px black, 0 -9px black;
+}
+@media(max-width:600px){
+  
+    [data-btn="mobile"]{
+        display: block !important;
+        transform: translate(53%, 65px);
+        width: 50px;
+        background: none;
+        border: none;  
+    }
+}
+.closeBtn {
+    transform: translate(90px, 1px);
+    list-style-type: none;
+    
+}

@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { RouterModule } from '@angular/router';
 import { SocialEventsComponent } from './social-events/social-events.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { SocialEventsComponent } from './social-events/social-events.component';
     HomeComponent,
     SubmenuComponent,
     SocialEventsComponent,
+    MainMenuComponent,
+    BudgetSavedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ComponentModule, HttpClientModule],
   providers: [],

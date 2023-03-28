@@ -1,0 +1,15 @@
+<div class="content_home">
+  <button
+    *ngIf="!openMenu"
+    (click)="openMenu = !openMenu"
+    data-btn="mobile"
+  ></button>
+  <ul *ngIf="openMenu">
+    <li class="closeBtn" (click)="openMenu = !openMenu">x</li>
+    <li>Casamento</li>
+    <li>Aniversário</li>
+    <li>Bodas</li>
+    <li>Debutante</li>
+    <li>Parto</li>
+  </ul>
+</div>

@@ -1,1 +1,12 @@
-<p>{{ message | json }}</p>
+<div class="container">
+  <h2>{{ message.c.title }}</h2>
+  <p>{{ message.c.text }}</p>
+
+  <div *ngFor="let item of message.a">
+    <p>{{ item.title }}</p>
+    <p>{{ item.text }}</p>
+    <p>{{ item.value }}</p>
+  </div>
+  <p>Entraga prazo {{ message.c.entregaPrazo }}</p>
+  <p>Valor Final {{ message.b }}</p>
+</div>

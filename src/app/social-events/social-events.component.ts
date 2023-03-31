@@ -1,30 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { EventType } from '../model';
 
 @Component({
   selector: 'app-social-events',
   templateUrl: './social-events.component.html',
   styleUrls: ['./social-events.component.scss'],
 })
-export class SocialEventsComponent {
+export class SocialEventsComponent implements OnInit {
+  eventType: EventType[] = [];
+  constructor(private user: ApiService) {}
+
+  ngOnInit() {
+    this.user.getDataWoman('eventType').subscribe((res: any) => {
+      const { showCase, fixedBudget, checkBoxList } = res;
+      this.eventType = res;
+    });
+  }
   nameEvent: string = 'Casamento';
-  eventType: any[] = [
-    {
-      type: 'Casamento',
-      evento: '/casamento',
-      background: 'http://lskdjfl',
-      route: '../showcase',
-    },
-    {
-      type: 'Aniversario',
-      evento: '/aniversario',
-      background: 'http://lskdjfl',
-      route: '../showcase',
-    },
-    {
-      type: 'Debutante',
-      evento: '/ladies',
-      background: 'http://lskdjfl',
-      route: './sldkf/sdf',
-    },
-  ];
 }

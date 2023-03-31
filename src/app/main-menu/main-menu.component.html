@@ -6,10 +6,11 @@
   ></button>
   <ul *ngIf="openMenu">
     <li class="closeBtn" (click)="openMenu = !openMenu">x</li>
-    <li>Casamento</li>
-    <li>Aniversário</li>
-    <li>Bodas</li>
-    <li>Debutante</li>
-    <li>Parto</li>
+    <li
+      [routerLink]="item.route + item.evento"
+      *ngFor="let item of getEventType"
+    >
+      {{ item.type }}
+    </li>
   </ul>
 </div>

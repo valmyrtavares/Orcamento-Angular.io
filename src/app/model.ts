@@ -22,3 +22,9 @@ export interface Evento {
   CheckBoxList: CheckBoxList[];
   ShowCase: ShowCase[];
 }
+export interface EventType {
+  type: string;
+  evento: string;
+  background: string;
+  route: string;
+}

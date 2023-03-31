@@ -47,6 +47,10 @@ export class MenuBudgetComponent {
     this.newDataBudget = newData;
   }
   saveBudget() {
-    this.data.changeMessage(this.newDataBudget);
+    this.data.changeMessage({
+      a: this.newDataBudget,
+      b: this.TotalValueBudget,
+      c: this.fixedBudget,
+    });
   }
 }

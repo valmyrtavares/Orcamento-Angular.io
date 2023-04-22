@@ -1,17 +1,22 @@
-<button (click)="changeScreen = !changeScreen">
-  {{ changeScreen ? "Orçamento" : "Portifólio" }}
-</button>
-<div class="show-case" *ngIf="changeScreen; else elseBudget">
-  <ng-container *ngFor="let item of showCase">
-    <div class="show-case img-content">
-      <h3>{{ item.title }}</h3>
-      <img [src]="item.image" alt="" />
-    </div>
-  </ng-container>
+<div *ngIf="knownUser; else segs">
+  <app-user-form (createNewUser)="createNewUser($event)"></app-user-form>
 </div>
-<ng-template #elseBudget>
-  <app-menu-budget
-    [fixedBudget]="fixedBudget"
-    [checkBoxList]="checkBoxList"
-  ></app-menu-budget>
+<ng-template #segs>
+  <button (click)="changeScreen = !changeScreen">
+    {{ changeScreen ? "Orçamento" : "Portifólio" }}
+  </button>
+  <div class="show-case" *ngIf="changeScreen; else elseBudget">
+    <ng-container *ngFor="let item of showCase">
+      <div class="show-case img-content">
+        <h3>{{ item.title }}</h3>
+        <img [src]="item.image" alt="" />
+      </div>
+    </ng-container>
+  </div>
+  <ng-template #elseBudget>
+    <app-menu-budget
+      [fixedBudget]="fixedBudget"
+      [checkBoxList]="checkBoxList"
+    ></app-menu-budget>
+  </ng-template>
 </ng-template>

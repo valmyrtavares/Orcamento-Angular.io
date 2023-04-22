@@ -25,6 +25,13 @@ export interface Evento {
 export interface EventType {
   type: string;
   evento: string;
-  background: string;
+  image: string;
   route: string;
+}
+
+export interface User {
+  name: string;
+  email: string;
+  phone: string;
+  date: string;
 }

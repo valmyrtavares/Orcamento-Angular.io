@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { SocialEventsComponent } from './social-events/social-events.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
+import { HeaderComponent } from './header/header.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
     SocialEventsComponent,
     MainMenuComponent,
     BudgetSavedComponent,
+    HeaderComponent,
+    UserFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ComponentModule, HttpClientModule],
   providers: [],

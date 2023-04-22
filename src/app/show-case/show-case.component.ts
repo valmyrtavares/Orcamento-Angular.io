@@ -11,6 +11,7 @@ import { ShowCase, FixedBudget, Evento, CheckBoxList } from '../model';
 export class ShowCaseComponent implements OnInit {
   changeScreen: boolean = true;
   id: string;
+  knownUser: boolean = true;
   checkBoxList: CheckBoxList[] = [];
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];
@@ -47,5 +48,9 @@ export class ShowCaseComponent implements OnInit {
       this.fixedBudget = fixedBudget;
       this.checkBoxList = checkBoxList;
     });
+  }
+
+  createNewUser(open: boolean) {
+    this.knownUser = open;
   }
 }

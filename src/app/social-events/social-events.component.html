@@ -1,4 +1,4 @@
-<div class="social-events-content">
+<!-- <div class="social-events-content">
   <button
     class="social-events-content__btn global"
     *ngFor="let item of eventType"
@@ -7,7 +7,15 @@
     {{ item.type }}
     {{ item.route }}
     {{ item.evento }}
-  </button>
+  </button> -->
+<div class="show-case">
+  <ng-container *ngFor="let item of eventType">
+    <div [routerLink]="item.route + item.evento">
+      <h3 class="show-case__title">{{ item.type }}</h3>
+      <div class="img-content">
+        <img [src]="item.image" alt="" />
+      </div>
+    </div>
+  </ng-container>
 </div>
-<!-- PARAMETRO NA ROTA DA LINHA 5" -->
-<a routerLink="../menubudget">Menu Orçamento</a>
+<!-- </div> -->

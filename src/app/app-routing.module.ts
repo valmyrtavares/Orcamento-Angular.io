@@ -10,7 +10,7 @@ import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
 const routes: Routes = [
   { path: 'events', component: SocialEventsComponent },
   { path: 'submenu', component: SubmenuComponent },
-  { path: '', component: HomeComponent },
+  { path: '', component: SocialEventsComponent },
   { path: 'menubudget', component: MenuBudgetComponent },
   { path: 'summary', component: BudgetSavedComponent },
   { path: 'showcase/:id', component: ShowCaseComponent }, //rota com parametro

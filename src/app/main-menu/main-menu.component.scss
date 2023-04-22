@@ -1,14 +1,17 @@
 [data-btn="mobile"]{
     display: none;
+    position: relative;
+    top: -67px;
+    left: 73%;
 }
 [data-btn="mobile"]::before{      
     content: '';
-    width: 32px;
-    height: 2px;
+    width: 42px;
+    height: 5px;
     display: inline-block;
     background: black;
     margin-right: 4px;
-    box-shadow: 0 8px black, 0 -9px black;
+    box-shadow: 0 11px black, 0 -11px black;
 }
 @media(max-width:600px){
   

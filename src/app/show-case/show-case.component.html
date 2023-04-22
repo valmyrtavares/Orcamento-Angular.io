@@ -1,6 +1,13 @@
 <div *ngIf="knownUser; else segs">
   <app-user-form (createNewUser)="createNewUser($event)"></app-user-form>
 </div>
+<!--
+  Esse componente acima tem elemento form dentro dele e o por isso ele não renderiza toda a tela
+  precisa checar ele antes de prosseguir, eu desabilitei o form para que ele volte a funcionar
+  For now the button came back to diplayed in screen and click it the show case is showed
+  It is an important point to be improved in the code, you cannot abandon the code without working 
+  and without any type of comment. This type of habit needs to be banned 
+-->
 <ng-template #segs>
   <button (click)="changeScreen = !changeScreen">
     {{ changeScreen ? "Orçamento" : "Portifólio" }}

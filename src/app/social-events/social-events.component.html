@@ -8,6 +8,7 @@
     {{ item.route }}
     {{ item.evento }}
   </button> -->
+{{ eventType | json }}
 <div class="show-case">
   <ng-container *ngFor="let item of eventType">
     <div [routerLink]="item.route + item.evento">

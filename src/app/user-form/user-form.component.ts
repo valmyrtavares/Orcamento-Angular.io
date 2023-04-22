@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+//import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { User } from '../model';
 
 @Component({
@@ -12,7 +12,7 @@ export class UserFormComponent implements OnInit {
 
   formUser: User | undefined;
 
-  constructor(private formBuilder: FormBuilder) {}
+  //constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {}
 
   //createFormGroup() {
@@ -25,7 +25,7 @@ export class UserFormComponent implements OnInit {
   //     });
   //   }
   // }
-  // createUser() {
-  //   this.createNewUser.emit(false);
-  // }
+  createUser() {
+    this.createNewUser.emit(false);
+  }
 }

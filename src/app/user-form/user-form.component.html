@@ -1,4 +1,42 @@
-<form>
-  <button (click)="createUser()">clique</button>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+    <label for="" nome>Nome</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nome"
+      name="nome"
+      [ngModel]="formUser.name"
+      placeholder="Nome"
+    />
+    <label for="" nome>Email</label>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      name="email"
+      [ngModel]="formUser.name"
+      placeholder="Email"
+    />
+    <label for="" nome>Email</label>
+    <input
+      type="text"
+      class="form-control"
+      id="email"
+      name="email"
+      [ngModel]="formUser.name"
+      placeholder="Email"
+    />
+    <label for="" nome>Data do evento</label>
+    <input
+      type="text"
+      class="form-control"
+      id="date"
+      name="date"
+      [ngModel]="formUser.name"
+      placeholder="Data do evento"
+    />
+    <button>clique</button>
+  </div>
 </form>
 <h1>Testando</h1>

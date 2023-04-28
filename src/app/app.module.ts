@@ -11,10 +11,11 @@ import { HomeComponent } from './home/home.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { RouterModule } from '@angular/router';
 import { SocialEventsComponent } from './social-events/social-events.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
+import { MobileButtonOptions } from './mobile-button-options/mobile-button-options';
 import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
 import { HeaderComponent } from './header/header.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,18 @@ import { UserFormComponent } from './user-form/user-form.component';
     HomeComponent,
     SubmenuComponent,
     SocialEventsComponent,
-    MainMenuComponent,
+    MobileButtonOptions,
     BudgetSavedComponent,
     HeaderComponent,
     UserFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ComponentModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ComponentModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [RouterModule],

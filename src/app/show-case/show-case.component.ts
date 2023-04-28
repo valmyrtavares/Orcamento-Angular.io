@@ -37,12 +37,16 @@ export class ShowCaseComponent implements OnInit {
 
   ngOnInit() {
     this.getData(); // Função para pegar os dados da API ao iniciar o componente
+    /*Aqui temos um problema que é resolvido com o router.events acima. Toda vez que a rota
+    muda ele dispara o getData, porque estamos em uma singlepageAplication e por isso temos 
+    essa condição da do event que ao trocar vai trocar também as fotos do evento     
+    */
   }
 
   getData() {
     //Função para pegar os dados da API
     this.id = this.route.snapshot.params['id']; //Como pegar a rota e colocar em uma variável
-    this.user.getDataWoman(this.id).subscribe((res: any) => {
+    this.user.getSocialEvents(this.id).subscribe((res: any) => {
       const { showCase, fixedBudget, checkBoxList } = res;
       this.showCase = showCase;
       this.fixedBudget = fixedBudget;

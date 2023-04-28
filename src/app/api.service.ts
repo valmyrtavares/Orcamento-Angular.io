@@ -11,7 +11,7 @@ export class ApiService {
     return this.http.get('http://localhost:3000/checkBoxList');
   }
 
-  getDataWoman(id: string) {
+  getSocialEvents(id: string) {
     return this.http.get(`http://localhost:3000/${id}`);
   }
 

@@ -3,17 +3,17 @@ import { ApiService } from '../api.service';
 import { EventType } from '../model';
 
 @Component({
-  selector: 'app-main-menu',
-  templateUrl: './main-menu.component.html',
-  styleUrls: ['./main-menu.component.scss'],
+  selector: 'app-mobile-button-options',
+  templateUrl: './mobile-button-options.html',
+  styleUrls: ['./mobile-button-options.scss'],
 })
-export class MainMenuComponent {
+export class MobileButtonOptions {
   openMenu: boolean = false;
   getEventType: EventType[] = [];
   constructor(private user: ApiService) {}
 
   ngOnInit() {
-    this.user.getDataWoman('eventType').subscribe((res: any) => {
+    this.user.getSocialEvents('eventType').subscribe((res: any) => {
       const { showCase, fixedBudget, checkBoxList } = res;
       this.getEventType = res;
     });

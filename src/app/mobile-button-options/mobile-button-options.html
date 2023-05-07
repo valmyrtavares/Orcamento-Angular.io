@@ -1,4 +1,4 @@
-<div class="content_home">
+<div class="content_popup_login">
   <button
     *ngIf="!openMenu"
     (click)="openMenu = !openMenu"
@@ -12,5 +12,12 @@
     >
       {{ item.type }}
     </li>
+    <li (click)="displayLoginPopup()">admin</li>
   </ul>
+
+  <ng-container *ngIf="showLoginPopup">
+    <app-popup-login-admin
+      (closeLoginPopup)="displayLoginPopup()"
+    ></app-popup-login-admin>
+  </ng-container>
 </div>

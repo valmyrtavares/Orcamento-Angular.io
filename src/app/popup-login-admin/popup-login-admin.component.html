@@ -1,0 +1,40 @@
+<div
+  class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
+>
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+    <button
+      type="button"
+      (click)="CloseLoginPopup()"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit()">
+    <div class="form-group container-sm">
+      <div class="mb-3">
+        <label for="nome" class="form-label" nome>Usuário</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nome"
+          [ngModel]=""
+          placeholder="Nome"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="nome" class="form-label" nome>Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          name="nome"
+          [ngModel]=""
+          placeholder="Nome"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">clique</button>
+    </div>
+  </form>
+</div>

@@ -11,7 +11,7 @@ import { ShowCase, FixedBudget, Evento, CheckBoxList } from '../model';
 export class ShowCaseComponent implements OnInit {
   changeScreen: boolean = true;
   id: string;
-  knownUser: boolean = true;
+  knownUser: boolean = false;
   checkBoxList: CheckBoxList[] = [];
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];

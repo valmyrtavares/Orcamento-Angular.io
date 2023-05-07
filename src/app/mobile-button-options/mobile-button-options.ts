@@ -8,6 +8,7 @@ import { EventType } from '../model';
   styleUrls: ['./mobile-button-options.scss'],
 })
 export class MobileButtonOptions {
+  showLoginPopup: boolean = false;
   openMenu: boolean = false;
   getEventType: EventType[] = [];
   constructor(private user: ApiService) {}
@@ -17,6 +18,8 @@ export class MobileButtonOptions {
       const { showCase, fixedBudget, checkBoxList } = res;
       this.getEventType = res;
     });
-    // this.getEventType = this.dataService.eventType;
+  }
+  displayLoginPopup() {
+    this.showLoginPopup = !this.showLoginPopup;
   }
 }

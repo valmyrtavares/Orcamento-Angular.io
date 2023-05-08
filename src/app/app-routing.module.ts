@@ -6,12 +6,16 @@ import { HomeComponent } from './home/home.component';
 import { ShowCaseComponent } from './show-case/show-case.component';
 import { MenuBudgetComponent } from './menu-budget/menu-budget.component';
 import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
+import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
+import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form.component';
 
 const routes: Routes = [
   { path: 'events', component: SocialEventsComponent },
   { path: 'submenu', component: SubmenuComponent },
   { path: '', component: SocialEventsComponent },
   { path: 'menubudget', component: MenuBudgetComponent },
+  { path: 'menuadmin', component: MenuAdminComponent },
+  { path: 'portifolioform', component: PortifolioFormComponent },
   { path: 'summary', component: BudgetSavedComponent },
   { path: 'showcase/:id', component: ShowCaseComponent }, //rota com parametro
 ];

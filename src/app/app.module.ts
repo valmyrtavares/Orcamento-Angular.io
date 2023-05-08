@@ -17,6 +17,8 @@ import { HeaderComponent } from './header/header.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule } from '@angular/forms';
 import { PopupLoginAdminComponent } from './popup-login-admin/popup-login-admin.component';
+import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
+import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { PopupLoginAdminComponent } from './popup-login-admin/popup-login-admin.
     HeaderComponent,
     UserFormComponent,
     PopupLoginAdminComponent,
+    MenuAdminComponent,
+    PortifolioFormComponent,
   ],
   imports: [
     BrowserModule,

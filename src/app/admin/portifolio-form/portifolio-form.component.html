@@ -1,0 +1,48 @@
+<div
+  class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
+>
+  <div class="modal-header">
+    <h1 class="modal-title fs-5" id="staticBackdropLabel">
+      Cadastre suas imagens
+    </h1>
+    <button
+      type="button"
+      (click)="CloseLoginPopup()"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <form #f="ngForm" class="form p-3" (ngSubmit)="sendImages(f)">
+    <div class="form-group container-sm">
+      <div class="mb-3">
+        <label for="nome" class="form-label" nome>Cadastre sua imagens</label>
+        <input
+          type="text"
+          class="form-control"
+          name="image"
+          placeholder="Imagens"
+          ngModel
+        />
+      </div>
+      <div class="mb-3">
+        <label for="nome" class="form-label" nome>Selecione o portifólio</label>
+        <select
+          class="form-select form-select-sm"
+          aria-label=".form-select-sm example"
+          name="category"
+          ngModel
+        >
+          <option selected>Open this select menu</option>
+          <option value="casamento">Casamento</option>
+          <option value="aniversário">Aniversário</option>
+          <option value="bodas">Bodas</option>
+          <option value="parto">Parto</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">clique</button>
+    </div>
+  </form>
+</div>

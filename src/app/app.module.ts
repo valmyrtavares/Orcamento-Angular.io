@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { PopupLoginAdminComponent } from './popup-login-admin/popup-login-admin.component';
 import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
 import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form.component';
+import { ServiceBudgetFormComponent } from './admin/service-budget-form/service-budget-form.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form
     PopupLoginAdminComponent,
     MenuAdminComponent,
     PortifolioFormComponent,
+    ServiceBudgetFormComponent,
   ],
   imports: [
     BrowserModule,

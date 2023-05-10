@@ -10,11 +10,17 @@ import { Router } from '@angular/router';
 export class PortifolioFormComponent implements OnInit {
   constructor(private router: Router) {}
 
+  editCreate: boolean = true;
+
   ngOnInit(): void {}
   sendImages(form: NgForm) {
     console.log(form.value);
   }
   CloseLoginPopup() {
     this.router.navigate(['/menuadmin']);
+  }
+  editCreateToggle() {
+    this.editCreate = !this.editCreate;
+    console.log(this.editCreate);
   }
 }

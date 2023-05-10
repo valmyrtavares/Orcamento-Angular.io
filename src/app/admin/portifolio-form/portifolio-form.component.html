@@ -1,19 +1,7 @@
 <div
+  *ngIf="editCreate; else elseCreate"
   class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
 >
-  <div class="modal-header">
-    <h1 class="modal-title fs-5" id="staticBackdropLabel">
-      Cadastre suas imagens
-    </h1>
-    <button
-      type="button"
-      (click)="CloseLoginPopup()"
-      class="btn-close"
-      data-bs-dismiss="modal"
-      aria-label="Close"
-    ></button>
-  </div>
-
   <form #f="ngForm" class="form p-3" (ngSubmit)="sendImages(f)">
     <div class="form-group container-sm">
       <div class="mb-3">
@@ -41,8 +29,21 @@
           <option value="parto">Parto</option>
         </select>
       </div>
-
-      <button type="submit" class="btn btn-primary">clique</button>
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button
+          (click)="editCreateToggle()"
+          type="submit"
+          class="btn btn-primary"
+        >
+          Editar
+        </button>
+      </div>
     </div>
   </form>
 </div>
+<ng-template #elseCreate>
+  <app-portifolio-edit-form
+    (closeEditForm)="editCreateToggle()"
+  ></app-portifolio-edit-form>
+</ng-template>

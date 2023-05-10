@@ -3,7 +3,7 @@
 >
   <div class="modal-header">
     <h1 class="modal-title fs-5" id="staticBackdropLabel">
-      Cadastre suas imagens
+      Cadastre seus falores e serviços
     </h1>
     <button
       type="button"
@@ -25,6 +25,15 @@
           ngModel
         />
       </div>
+      <label for="nome" class="form-label" nome>Descrição do serviço</label>
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control"
+          id="floatingTextarea2Disabled"
+          style="height: 100px"
+          disabled
+        ></textarea>
+      </div>
       <div class="mb-3">
         <label for="nome" class="form-label" nome>Selecione o portifólio</label>
         <select
@@ -40,8 +49,48 @@
           <option value="parto">Parto</option>
         </select>
       </div>
+      <div>
+        <div class="mb-3">
+          <label for="nome" class="form-label" nome
+            >Valor inicial do serviço</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="image"
+            placeholder="Imagens"
+            ngModel
+          />
+        </div>
+        <div class="mb-3">
+          <label for="nome" class="form-label" nome>Prazo de entrega</label>
+          <input
+            type="text"
+            class="form-control"
+            name="image"
+            placeholder="Imagens"
+            ngModel
+          />
+        </div>
+      </div>
 
       <button type="submit" class="btn btn-primary">clique</button>
     </div>
   </form>
+  <div class="d-flex justify-content-end">
+    <p class="mx-3 me-auto" style="margin-right: 1rem">
+      Acrescente serviços aqui
+    </p>
+    <button
+      type="button"
+      class="btn btn-primary rounded-circle btn-lg"
+      style="
+        --bs-btn-padding-y: 0.5rem;
+        --bs-btn-padding-x: 0.75rem;
+        --bs-btn-font-size: 1rem;
+      "
+    >
+      +
+    </button>
+  </div>
 </div>

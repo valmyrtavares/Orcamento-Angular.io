@@ -1,0 +1,24 @@
+<div
+  class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
+>
+  <div class="modal-header">
+    <p></p>
+    <button
+      type="button"
+      (click)="CloseLoginPopup()"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div
+    *ngFor="let item of portifolio"
+    class="d-flex flex-row flex-{grow|shrink}-1 mt-3"
+  >
+    <p style="min-width: 10%">{{ item.id }}</p>
+    <img style="max-width: 150px" [src]="item.image" [alt]="item.id" />
+    <button style="min-width: 40%">Delete</button>
+  </div>
+</div>
+
+```

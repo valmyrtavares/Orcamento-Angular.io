@@ -74,7 +74,7 @@ export class ShowCaseComponent implements OnInit {
         })
       )
       .subscribe((res) => {
-        this.showCase = res;
+        this.showCase = res.filter((item) => item.category === this.id);
       });
   }
 

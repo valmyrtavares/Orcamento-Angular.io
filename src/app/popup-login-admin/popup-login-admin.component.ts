@@ -13,6 +13,7 @@ export class PopupLoginAdminComponent implements OnInit {
 
   ngOnInit(): void {}
   onSubmit() {}
+
   CloseLoginPopup() {
     this.closeLoginPopup.emit(false);
   }

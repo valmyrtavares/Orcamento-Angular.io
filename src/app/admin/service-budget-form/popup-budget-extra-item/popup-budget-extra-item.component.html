@@ -1,12 +1,10 @@
-<div
-  class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
->
+<div class="popup_budget_extra">
   <div class="modal-header">
     <h1 class="modal-title fs-5" id="staticBackdropLabel">
-      Cadastre seus falores e serviços
+      Crie seu novo item opcinal
     </h1>
     <button
-      routerLink="/menuadmin"
+      (click)="closeItemPopup()"
       type="button"
       class="btn-close"
       data-bs-dismiss="modal"
@@ -17,7 +15,7 @@
   <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit()">
     <div class="form-group container-sm">
       <div class="mb-3">
-        <label for="nome" class="form-label" nome>Cadastre sua imagens</label>
+        <label for="nome" class="form-label" nome>Titulo do item</label>
         <input
           type="text"
           class="form-control"
@@ -52,9 +50,7 @@
       </div>
       <div>
         <div class="mb-3">
-          <label for="nome" class="form-label" nome
-            >Valor inicial do serviço</label
-          >
+          <label for="nome" class="form-label" nome>Valor do serviço</label>
           <input
             type="number"
             class="form-control"
@@ -63,41 +59,8 @@
             ngModel
           />
         </div>
-        <div class="mb-3">
-          <label for="nome" class="form-label" nome>Prazo de entrega</label>
-          <input
-            type="text"
-            class="form-control"
-            name="image"
-            placeholder="Imagens"
-            ngModel
-          />
-        </div>
       </div>
-
       <button type="submit" class="btn btn-primary">clique</button>
     </div>
   </form>
-  <div class="d-flex justify-content-end">
-    <p class="mx-3 me-auto" style="margin-right: 1rem">
-      Acrescente serviços aqui
-    </p>
-    <button
-      (click)="toggleItemPopup()"
-      type="button"
-      class="btn btn-primary rounded-circle btn-lg"
-      style="
-        --bs-btn-padding-y: 0.5rem;
-        --bs-btn-padding-x: 0.75rem;
-        --bs-btn-font-size: 1rem;
-      "
-    >
-      +
-    </button>
-  </div>
 </div>
-<ng-container *ngIf="itemPopup">
-  <app-popup-budget-extra-item
-    (closePopup)="toggleItemPopup()"
-  ></app-popup-budget-extra-item>
-</ng-container>

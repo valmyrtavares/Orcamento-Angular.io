@@ -11,4 +11,6 @@ export class AppComponent {
   constructor(private router: Router) {
     console.log(this.router.url);
   }
+  paises = ['Brasil', 'França', 'Belgica'];
+  siteUrl = window.location.href;
 }

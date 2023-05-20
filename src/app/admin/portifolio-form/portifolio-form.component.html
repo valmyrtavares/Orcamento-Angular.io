@@ -2,6 +2,16 @@
   *ngIf="editCreate; else elseCreate"
   class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
 >
+  <div class="modal-header">
+    <p></p>
+    <button
+      routerLink="/menuadmin"
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    ></button>
+  </div>
   <form #f="ngForm" class="form p-3" (ngSubmit)="sendImages(f)">
     <div class="form-group container-sm">
       <div class="mb-3">
@@ -31,11 +41,7 @@
       </div>
       <div class="d-flex justify-content-between">
         <button type="submit" class="btn btn-primary">Enviar</button>
-        <button
-          (click)="editCreateToggle()"
-          type="submit"
-          class="btn btn-primary"
-        >
+        <button (click)="editCreateToggle()" class="btn btn-primary">
           Editar
         </button>
       </div>

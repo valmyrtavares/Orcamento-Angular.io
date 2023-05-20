@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceBudgetFormComponent implements OnInit {
   constructor() {}
+  itemPopup: boolean = false;
 
   ngOnInit(): void {}
   onSubmit() {
     console.log('teste');
+  }
+  toggleItemPopup() {
+    this.itemPopup = !this.itemPopup;
   }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ApiService } from '../api.service';
 import { ShowCase, FixedBudget, Evento, CheckBoxList } from '../model';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-show-case',
@@ -24,13 +26,14 @@ export class ShowCaseComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private user: ApiService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {
     this.id = this.route.snapshot.params['id']; //Como pegar a rota e colocar em uma variável
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         //Quando a rota é trocada ele dipara o evento
-        this.getData();
+        //  this.getData();
       }
     });
   }
@@ -41,6 +44,7 @@ export class ShowCaseComponent implements OnInit {
     muda ele dispara o getData, porque estamos em uma singlepageAplication e por isso temos 
     essa condição da do event que ao trocar vai trocar também as fotos do evento     
     */
+    this.getDataFirebase();
   }
 
   getData() {
@@ -52,6 +56,26 @@ export class ShowCaseComponent implements OnInit {
       this.fixedBudget = fixedBudget;
       this.checkBoxList = checkBoxList;
     });
+  }
+  getDataFirebase() {
+    this.http
+      .get(
+        'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/portifolio.json'
+      )
+      .pipe(
+        map((res) => {
+          const showcase = [];
+          for (const key in res) {
+            if (res.hasOwnProperty(key)) {
+              showcase.push({ ...res[key], id: key });
+            }
+          }
+          return showcase;
+        })
+      )
+      .subscribe((res) => {
+        this.showCase = res;
+      });
   }
 
   createNewUser(open: boolean) {

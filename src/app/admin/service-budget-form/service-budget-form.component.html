@@ -1,6 +1,27 @@
 <div
   class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
 >
+  <div class="mb-3" [hidden]="!readonly">
+    <label for="nome" class="form-label" nome>Selecione o serviço</label>
+    <select
+      class="form-select form-select-sm"
+      aria-label=".form-select-sm example"
+      name="category"
+      #category
+      (change)="searchData(category)"
+    >
+      <option selected>Open this select menu</option>
+      <option value="casamento">Casamento</option>
+      <option value="aniversario">Aniversário</option>
+      <option value="debutante">Debutante</option>
+      <option value="parto">Parto</option>
+    </select>
+  </div>
+</div>
+
+<div
+  class="container_popup_admin_login shadow-lg p-3 mb-5 bg-body-tertiary rounded"
+>
   <div class="modal-header">
     <h1 class="modal-title fs-5" id="staticBackdropLabel">
       Cadastre seus falores e serviços
@@ -14,42 +35,43 @@
     ></button>
   </div>
 
-  <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit()">
+  <form #productEdit="ngForm" class="form p-3" (ngSubmit)="onEdit(productEdit)">
+    <input type="hidden" name="id" id="id" ngModel />
     <div class="form-group container-sm">
       <div class="mb-3">
-        <label for="nome" class="form-label" nome>Cadastre sua imagens</label>
+        <label for="nome" class="form-label" nome>Titulo do orçamento</label>
         <input
           type="text"
           class="form-control"
-          name="image"
-          placeholder="Imagens"
+          name="budgetTitle"
+          id="budgetTitle"
           ngModel
+          [disabled]="readonly"
         />
       </div>
       <label for="nome" class="form-label" nome>Descrição do serviço</label>
       <div class="form-floating mb-3">
         <textarea
           class="form-control"
-          id="floatingTextarea2Disabled"
+          ngModel
+          name="serviceDescription"
+          id="serviceDescription"
+          ngModel
           style="height: 100px"
-          disabled
+          [disabled]="readonly"
         ></textarea>
       </div>
-      <div class="mb-3">
-        <label for="nome" class="form-label" nome>Selecione o portifólio</label>
-        <select
-          class="form-select form-select-sm"
-          aria-label=".form-select-sm example"
+      <div class="mb-3" [hidden]="!readonly">
+        <label for="nome" class="form-label" nome>Serviço Selecionado</label>
+        <input
+          type="text"
+          class="form-control"
           name="category"
+          id="category"
           ngModel
-        >
-          <option selected>Open this select menu</option>
-          <option value="casamento">Casamento</option>
-          <option value="aniversário">Aniversário</option>
-          <option value="bodas">Bodas</option>
-          <option value="parto">Parto</option>
-        </select>
+        />
       </div>
+
       <div>
         <div class="mb-3">
           <label for="nome" class="form-label" nome
@@ -58,9 +80,9 @@
           <input
             type="number"
             class="form-control"
-            name="image"
-            placeholder="Imagens"
+            name="InitialPrice"
             ngModel
+            [disabled]="readonly"
           />
         </div>
         <div class="mb-3">
@@ -68,14 +90,16 @@
           <input
             type="text"
             class="form-control"
-            name="image"
-            placeholder="Imagens"
+            name="deadline"
             ngModel
+            [disabled]="readonly"
           />
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary">clique</button>
+      <button type="submit" class="btn btn-primary" [disabled]="readonly">
+        Editar
+      </button>
     </div>
   </form>
   <div class="d-flex justify-content-end">

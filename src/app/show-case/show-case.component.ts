@@ -17,12 +17,13 @@ export class ShowCaseComponent implements OnInit {
   checkBoxList: CheckBoxList[] = [];
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];
-  fixedBudget: FixedBudget = {
-    title: '',
-    text: '',
-    entregaPrazo: '',
-    valorInicial: 0,
-  };
+  fixedBudget: FixedBudget[] = [];
+  // fixedBudget: FixedBudget = {
+  //   title: '',
+  //   text: '',
+  //   entregaPrazo: '',
+  //   valorInicial: 0,
+  // };
   constructor(
     private route: ActivatedRoute,
     private user: ApiService,
@@ -45,6 +46,7 @@ export class ShowCaseComponent implements OnInit {
     essa condição da do event que ao trocar vai trocar também as fotos do evento     
     */
     this.getDataFirebase();
+    this.getDataFixedBudget();
   }
 
   getData() {
@@ -53,7 +55,7 @@ export class ShowCaseComponent implements OnInit {
     this.user.getSocialEvents(this.id).subscribe((res: any) => {
       const { showCase, fixedBudget, checkBoxList } = res;
       this.showCase = showCase;
-      this.fixedBudget = fixedBudget;
+      //  this.fixedBudget = fixedBudget;
       this.checkBoxList = checkBoxList;
     });
   }
@@ -75,6 +77,27 @@ export class ShowCaseComponent implements OnInit {
       )
       .subscribe((res) => {
         this.showCase = res.filter((item) => item.category === this.id);
+      });
+  }
+  getDataFixedBudget() {
+    this.http
+      .get(
+        'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/fixedBudget.json'
+      )
+      .pipe(
+        map((res) => {
+          const fixedBudget = [];
+          for (const key in res) {
+            if (res.hasOwnProperty(key)) {
+              fixedBudget.push({ ...res[key], id: key });
+            }
+          }
+          return fixedBudget;
+        })
+      )
+      .subscribe((res) => {
+        this.fixedBudget = res.filter((item) => item.category === this.id);
+        console.log(this.fixedBudget);
       });
   }
 

@@ -1,10 +1,10 @@
-<h3>{{ fixedBudget.title }}</h3>
-<p>{{ fixedBudget.text }}</p>
-<p>{{ fixedBudget.valorInicial }}</p>
-<p>{{ fixedBudget.entregaPrazo }}</p>
+<h3>{{ fixedBudget[0].budgetTitle }}</h3>
+<p>{{ fixedBudget[0].serviceDescription }}</p>
+<p>{{ fixedBudget[0].InitialPrice }}</p>
+<p>{{ fixedBudget[0].deadline }}</p>
 <app-check
   [data]="checkBoxList"
-  [initialValue]="fixedBudget.valorInicial"
+  [initialValue]="fixedBudget[0].InitialPrice"
   (parentFunction)="parentFunction($event)"
 ></app-check>
 <p>

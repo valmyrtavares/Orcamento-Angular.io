@@ -26,12 +26,7 @@ export class MenuBudgetComponent {
     profissao: '',
   };
   @Input() checkBoxList: CheckBoxList[] = [];
-  @Input() fixedBudget: FixedBudget = {
-    title: '',
-    text: '',
-    entregaPrazo: '',
-    valorInicial: 0,
-  };
+  @Input() fixedBudget: FixedBudget[];
   TotalValueBudget: number = 0;
   newDataBudget: CheckBoxList[] = [];
 

@@ -1,8 +1,9 @@
 export interface FixedBudget {
-  title: string;
-  text: string;
-  entregaPrazo: string;
-  valorInicial: number;
+  InitialPrice: number;
+  budgetTitle: string;
+  category: string;
+  deadline: string;
+  serviceDescription: string;
 }
 export interface CheckBoxList {
   text: string;

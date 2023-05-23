@@ -22,6 +22,7 @@ import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form
 import { ServiceBudgetFormComponent } from './admin/service-budget-form/service-budget-form.component';
 import { PortifolioEditFormComponent } from './admin/portifolio-form/portifolio-edit-form/portifolio-edit-form.component';
 import { PopupBudgetExtraItemComponent } from './admin/service-budget-form/popup-budget-extra-item/popup-budget-extra-item.component';
+import { EditExtraServiceComponent } from './admin/edit-extra-service/edit-extra-service.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { PopupBudgetExtraItemComponent } from './admin/service-budget-form/popup
     ServiceBudgetFormComponent,
     PortifolioEditFormComponent,
     PopupBudgetExtraItemComponent,
+    EditExtraServiceComponent,
   ],
   imports: [
     BrowserModule,

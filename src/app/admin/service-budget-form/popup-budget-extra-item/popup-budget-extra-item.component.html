@@ -11,42 +11,39 @@
       aria-label="Close"
     ></button>
   </div>
-
-  <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit()">
+  <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit(f)">
     <div class="form-group container-sm">
       <div class="mb-3">
         <label for="nome" class="form-label" nome>Titulo do item</label>
         <input
           type="text"
           class="form-control"
-          name="image"
-          placeholder="Imagens"
+          name="extraServiceTitle"
           ngModel
+        />
+      </div>
+      <div class="mb-3">
+        <input
+          type="hidden"
+          name="category"
+          [(ngModel)]="categoryExtraService"
         />
       </div>
       <label for="nome" class="form-label" nome>Descrição do serviço</label>
       <div class="form-floating mb-3">
         <textarea
           class="form-control"
+          name="serviceDescription"
           id="floatingTextarea2Disabled"
           style="height: 100px"
-          disabled
+          ngModel
         ></textarea>
       </div>
-      <div class="mb-3">
-        <label for="nome" class="form-label" nome>Selecione o portifólio</label>
-        <select
-          class="form-select form-select-sm"
-          aria-label=".form-select-sm example"
-          name="category"
-          ngModel
-        >
-          <option selected>Open this select menu</option>
-          <option value="casamento">Casamento</option>
-          <option value="aniversário">Aniversário</option>
-          <option value="bodas">Bodas</option>
-          <option value="parto">Parto</option>
-        </select>
+      <div>
+        <div class="mb-3">
+          <label for="nome" class="form-label" nome>Link para serviço</label>
+          <input type="text" class="form-control" name="linkService" ngModel />
+        </div>
       </div>
       <div>
         <div class="mb-3">
@@ -54,8 +51,7 @@
           <input
             type="number"
             class="form-control"
-            name="image"
-            placeholder="Imagens"
+            name="serviceValue"
             ngModel
           />
         </div>
@@ -63,4 +59,10 @@
       <button type="submit" class="btn btn-primary">clique</button>
     </div>
   </form>
+
+  <div class="d-flex justify-content-end">
+    <button (click)="editService()" class="btn btn-primary">
+      Editar serviços
+    </button>
+  </div>
 </div>

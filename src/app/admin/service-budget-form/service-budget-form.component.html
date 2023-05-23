@@ -108,6 +108,7 @@
     </p>
     <button
       (click)="toggleItemPopup()"
+      [disabled]="readonly"
       type="button"
       class="btn btn-primary rounded-circle btn-lg"
       style="
@@ -120,8 +121,10 @@
     </button>
   </div>
 </div>
+
 <ng-container *ngIf="itemPopup">
   <app-popup-budget-extra-item
     (closePopup)="toggleItemPopup()"
+    [categoryExtraService]="form.value.category"
   ></app-popup-budget-extra-item>
 </ng-container>

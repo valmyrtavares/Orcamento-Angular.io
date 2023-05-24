@@ -1,8 +1,8 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from '../model';
+import { User } from '../../model';
 import { HttpClient } from '@angular/common/http';
-import { ApiService } from '../api.service';
+import { ApiService } from '../../api.service';
 import { map } from 'rxjs';
 
 @Component({

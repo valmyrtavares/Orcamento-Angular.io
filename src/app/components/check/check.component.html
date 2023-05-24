@@ -1,5 +1,5 @@
-<div *ngFor="let item of data; let i = index">
-  <h3 class="check-content__title">{{ item.title }}</h3>
+<div *ngFor="let item of extraItensBudget; let i = index">
+  <h3 class="check-content__title">{{ item.extraServiceTitle }}</h3>
 
   <div class="check-content__content">
     <input
@@ -8,7 +8,7 @@
       (click)="addingValue(i)"
     />
     <p class="check-content__content__text">
-      {{ item.text }}<span>R$ {{ item.value }}</span>
+      {{ item.serviceDescription }}<span>R$ {{ item.serviceValue }}</span>
     </p>
   </div>
 </div>

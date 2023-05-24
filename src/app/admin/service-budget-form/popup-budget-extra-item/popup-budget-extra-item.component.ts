@@ -21,7 +21,6 @@ export class PopupBudgetExtraItemComponent {
         portifolio
       )
       .subscribe((res) => {
-        console.log('Não fui disparado');
         console.log(res);
       });
   }

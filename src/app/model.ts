@@ -6,11 +6,13 @@ export interface FixedBudget {
   serviceDescription: string;
 }
 export interface CheckBoxList {
-  text: string;
-  value: number;
+  serviceDescription: string;
+  serviceValue: number;
   check: boolean;
+  linkService: string;
+  category: string;
   valueChange: number;
-  title: string;
+  extraServiceTitle: string;
 }
 export interface ShowCase {
   id: number;

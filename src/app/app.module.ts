@@ -5,16 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentModule } from './components/component.module';
-import { MenuBudgetComponent } from './menu-budget/menu-budget.component';
+import { MenuBudgetComponent } from './show-case/menu-budget/menu-budget.component';
 import { ShowCaseComponent } from './show-case/show-case.component';
-import { HomeComponent } from './home/home.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { RouterModule } from '@angular/router';
 import { SocialEventsComponent } from './social-events/social-events.component';
 import { MobileButtonOptions } from './mobile-button-options/mobile-button-options';
 import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
 import { HeaderComponent } from './header/header.component';
-import { UserFormComponent } from './user-form/user-form.component';
+import { UserFormComponent } from './show-case/user-form/user-form.component';
 import { FormsModule } from '@angular/forms';
 import { PopupLoginAdminComponent } from './popup-login-admin/popup-login-admin.component';
 import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
@@ -29,7 +28,6 @@ import { EditExtraServiceComponent } from './admin/edit-extra-service/edit-extra
     AppComponent,
     MenuBudgetComponent,
     ShowCaseComponent,
-    HomeComponent,
     SubmenuComponent,
     SocialEventsComponent,
     MobileButtonOptions,

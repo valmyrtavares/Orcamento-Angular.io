@@ -18,6 +18,7 @@ export class ShowCaseComponent implements OnInit {
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];
   fixedBudget: FixedBudget[] = [];
+
   // fixedBudget: FixedBudget = {
   //   title: '',
   //   text: '',
@@ -47,6 +48,7 @@ export class ShowCaseComponent implements OnInit {
     */
     this.getDataFirebase();
     this.getDataFixedBudget();
+    // this.getDataExtraItens();
   }
 
   getData() {
@@ -97,7 +99,6 @@ export class ShowCaseComponent implements OnInit {
       )
       .subscribe((res) => {
         this.fixedBudget = res.filter((item) => item.category === this.id);
-        console.log(this.fixedBudget);
       });
   }
 

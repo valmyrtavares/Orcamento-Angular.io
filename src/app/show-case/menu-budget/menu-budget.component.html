@@ -3,7 +3,6 @@
 <p>{{ fixedBudget[0].InitialPrice }}</p>
 <p>{{ fixedBudget[0].deadline }}</p>
 <app-check
-  [data]="checkBoxList"
   [initialValue]="fixedBudget[0].InitialPrice"
   (parentFunction)="parentFunction($event)"
 ></app-check>

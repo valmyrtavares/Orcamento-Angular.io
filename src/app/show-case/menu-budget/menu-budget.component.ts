@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ApiService } from '../api.service';
-import { FixedBudget, CheckBoxList } from '../model';
-import { DataService } from '../data.service';
+import { ApiService } from '../../api.service';
+import { FixedBudget, CheckBoxList } from '../../model';
+import { DataService } from '../../data.service';
 import { Subscription } from 'rxjs';
 
 interface pessoa {
@@ -25,15 +25,15 @@ export class MenuBudgetComponent {
     idade: 0,
     profissao: '',
   };
-  @Input() checkBoxList: CheckBoxList[] = [];
+  // @Input() extraItensBudget: CheckBoxList[] = [];
   @Input() fixedBudget: FixedBudget[];
   TotalValueBudget: number = 0;
   newDataBudget: CheckBoxList[] = [];
 
   ngOnInit() {
-    this.user.getDataCheck().subscribe((res: any) => {
-      this.checkBoxList = res;
-    });
+    // this.user.getDataCheck().subscribe((res: any) => {
+    //   this.checkBoxList = res;
+    // });
   }
 
   parentFunction(totalValue: any) {

@@ -11,32 +11,19 @@
       aria-label="Close"
     ></button>
   </div>
+  <p style="color: red" *ngIf="nopass">Senha ou usuário incorretos</p>
 
-  <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit()">
+  <form #f="ngForm" class="form p-3" (ngSubmit)="onSubmit(f)">
     <div class="form-group container-sm">
       <div class="mb-3">
         <label for="nome" class="form-label" nome>Usuário</label>
-        <input
-          type="text"
-          class="form-control"
-          name="nome"
-          [ngModel]=""
-          placeholder="Nome"
-        />
+        <input type="text" class="form-control" name="name" ngModel />
       </div>
       <div class="mb-3">
         <label for="nome" class="form-label" nome>Senha</label>
-        <input
-          type="password"
-          class="form-control"
-          name="nome"
-          [ngModel]=""
-          placeholder="Nome"
-        />
+        <input type="password" class="form-control" name="password" ngModel />
       </div>
-      <button (click)="temporaryName()" type="submit" class="btn btn-primary">
-        clique
-      </button>
+      <button type="submit" class="btn btn-primary">clique</button>
     </div>
   </form>
 </div>

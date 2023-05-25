@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,13 +13,17 @@ export class PopupLoginAdminComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-  onSubmit() {}
+  nopass: boolean = false;
 
   CloseLoginPopup() {
     this.closeLoginPopup.emit(false);
   }
-  temporaryName() {
-    this.router.navigate(['/menuadmin']);
-    this.CloseLoginPopup();
+  onSubmit(form: NgForm) {
+    if (form.value.name === 'juliana' && form.value.password === '1234') {
+      this.router.navigate(['/menuadmin']);
+      this.CloseLoginPopup();
+    } else {
+      this.nopass = true;
+    }
   }
 }

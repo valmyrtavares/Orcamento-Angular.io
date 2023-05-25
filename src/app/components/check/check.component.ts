@@ -24,11 +24,11 @@ interface pessoa {
 })
 export class CheckComponent implements OnInit {
   id: string;
-  pessoa: pessoa = {
-    nome: 'Valmyr Tavares',
-    idade: 10,
-    profissao: 'programador',
-  };
+  // pessoa: pessoa = {
+  //   nome: 'Valmyr Tavares',
+  //   idade: 10,
+  //   profissao: 'programador',
+  // };
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.id = this.route.snapshot.params['id']; //Como pegar a rota e colocar em uma variável
   }

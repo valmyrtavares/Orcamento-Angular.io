@@ -15,7 +15,7 @@ import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
 import { HeaderComponent } from './header/header.component';
 import { UserFormComponent } from './show-case/user-form/user-form.component';
 import { FormsModule } from '@angular/forms';
-import { PopupLoginAdminComponent } from './popup-login-admin/popup-login-admin.component';
+import { PopupLoginAdminComponent } from './admin/popup-login-admin/popup-login-admin.component';
 import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
 import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form.component';
 import { ServiceBudgetFormComponent } from './admin/service-budget-form/service-budget-form.component';

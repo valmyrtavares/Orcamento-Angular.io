@@ -41,6 +41,8 @@ export class ShowCaseComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.checkCustomer();
+    this.getDataFirebase();
     this.getData(); // Função para pegar os dados da API ao iniciar o componente
     /*Aqui temos um problema que é resolvido com o router.events acima. Toda vez que a rota
     muda ele dispara o getData, porque estamos em uma singlepageAplication e por isso temos 
@@ -49,6 +51,11 @@ export class ShowCaseComponent implements OnInit {
     this.getDataFirebase();
     this.getDataFixedBudget();
     // this.getDataExtraItens();
+  }
+  checkCustomer() {
+    if (localStorage.getItem('customer') != null) {
+      this.knownUser = false;
+    }
   }
 
   getData() {

@@ -22,6 +22,7 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    localStorage.setItem('customer', JSON.stringify(form.value.name));
     this.http
       .post(
         'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/customer.json',

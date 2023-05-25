@@ -12,17 +12,19 @@ export class PopupBudgetExtraItemComponent {
   constructor(private http: HttpClient, private router: Router) {}
   @Output() closePopup: EventEmitter<boolean> = new EventEmitter();
   @Input() categoryExtraService: string;
+  standardValurCheck: boolean = false;
 
   onSubmit(form: NgForm) {
+    console.log(form.value);
     const portifolio = form.value;
     this.http
-      .post(
-        'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/extraItemBudget.json',
-        portifolio
-      )
-      .subscribe((res) => {
-        console.log(res);
-      });
+    .post(
+      'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/extraItemBudget.json',
+      portifolio
+    )
+    .subscribe((res) => {
+      console.log(res);
+    });
   }
   editService() {
     this.router.navigate([`/editservice/${this.categoryExtraService}`]);

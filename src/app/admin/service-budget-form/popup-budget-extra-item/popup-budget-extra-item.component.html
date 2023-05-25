@@ -29,6 +29,9 @@
           [(ngModel)]="categoryExtraService"
         />
       </div>
+      <input type="hidden" name="valueChange" [ngModel]="12" />
+      <input type="hidden" name="check" [(ngModel)]="standardValurCheck" />
+
       <label for="nome" class="form-label" nome>Descrição do serviço</label>
       <div class="form-floating mb-3">
         <textarea

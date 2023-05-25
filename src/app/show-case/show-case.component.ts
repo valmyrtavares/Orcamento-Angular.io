@@ -13,7 +13,7 @@ import { map } from 'rxjs';
 export class ShowCaseComponent implements OnInit {
   changeScreen: boolean = true;
   id: string;
-  knownUser: boolean = false;
+  knownUser: boolean = true;
   checkBoxList: CheckBoxList[] = [];
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];

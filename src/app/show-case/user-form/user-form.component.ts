@@ -21,17 +21,12 @@ export class UserFormComponent implements OnInit {
     this.getAllRegisteedCustomers();
   }
 
-  formUser: User = {
-    id: this.customerIdBiggestNumber,
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-  };
   onSubmit(form: NgForm) {
-    //const lux = form.value;
     this.http
-      .post('http://localhost:3000/customer', form.value)
+      .post(
+        'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/customer.json',
+        form.value
+      )
       .subscribe((res) => {
         console.log(res);
       });

@@ -1,14 +1,12 @@
-{{ customerIdBiggestNumber }}
 <form #f="ngForm" class="form" (ngSubmit)="onSubmit(f)">
   <div class="form-group container-sm">
+    <h3>Preencha os seus dados</h3>
     <div class="mb-3">
-      <input type="hidden" name="id" [ngModel]="customerIdBiggestNumber" />
-      <label for="nome" class="form-label" nome>Nome</label>
       <input
         type="text"
         class="form-control"
-        name="nome"
-        [ngModel]="formUser.name"
+        name="name"
+        ngModel
         placeholder="Nome"
       />
       <label for="email" class="form-label" nome>Email</label>
@@ -17,7 +15,7 @@
         class="form-control"
         id="email"
         name="email"
-        [ngModel]="formUser.email"
+        ngModel
         placeholder="Email"
       />
       <label class="form-label" for="mobile" nome>Celular</label>
@@ -26,8 +24,8 @@
         class="form-control"
         id="mobile"
         name="phone"
-        [ngModel]="formUser.phone"
-        placeholder="Email"
+        ngModel
+        placeholder="Celular"
       />
       <label class="form-label" for="date" nome>Data do evento</label>
       <input
@@ -35,7 +33,7 @@
         class="form-control"
         id="date"
         name="date"
-        [ngModel]="formUser.date"
+        ngModel
         placeholder="Data do evento"
       />
     </div>

@@ -3,13 +3,20 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
+  user: string = '';
 
   ngOnInit(): void {
+    this.hellowUser();
   }
 
+  hellowUser() {
+    if (localStorage.hasOwnProperty('customer')) {
+      this.user = JSON.parse(localStorage.getItem('customer'));
+      console.log(this.user);
+    }
+  }
 }

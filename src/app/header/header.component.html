@@ -1,3 +1,6 @@
 <div class="content" routerLink="/">
   <img src="../../assets/images/header.JPG" alt="" />
+  <h3 *ngIf="user">
+    Seja bem vindo/a <span>{{ user }}</span>
+  </h3>
 </div>

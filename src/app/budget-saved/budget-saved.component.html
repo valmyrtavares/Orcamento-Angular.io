@@ -1,12 +1,25 @@
-<div class="container">
-  <h2>{{ message.c.title }}</h2>
-  <p>{{ message.c.text }}</p>
-
-  <div *ngFor="let item of message.a">
-    <p>{{ item.title }}</p>
-    <p>{{ item.text }}</p>
-    <p>{{ item.value }}</p>
+<div class="budget-saved shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+  <div class="modal-header">
+    <button
+      type="button"
+      (click)="CloseLoginPopup()"
+      class="btn-close"
+      data-bs-dismiss="modal"
+      aria-label="Close"
+    >
+      x
+    </button>
   </div>
-  <p>Entraga prazo {{ message.c.entregaPrazo }}</p>
-  <p>Valor Final {{ message.b }}</p>
+  <div class="container summary_budget">
+    <h2>{{ fixedBudget.budgetTitle }}</h2>
+    <p>{{ fixedBudget.serviceDescription }}</p>
+    <p>{{ fixedBudget.deadline }}</p>
+    <p>{{ fixedBudget.InitialPrice }}</p>
+
+    <div *ngFor="let item of newDataBudget">
+      <p>{{ item.extraServiceTitle }}</p>
+      <p>{{ item.serviceDescription }}</p>
+      <p>{{ item.serviceValue }}</p>
+    </div>
+  </div>
 </div>

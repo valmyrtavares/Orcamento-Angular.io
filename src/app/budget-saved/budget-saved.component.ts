@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 import { FixedBudget, CheckBoxList } from '../model';
@@ -9,6 +9,9 @@ import { FixedBudget, CheckBoxList } from '../model';
   styleUrls: ['./budget-saved.component.scss'],
 })
 export class BudgetSavedComponent implements OnInit {
+  @Input() fixedBudget: FixedBudget;
+  @Input() newDataBudget: CheckBoxList[] = [];
+  @Input() TotalValueBudget: number = 0;
   message: any;
   subscription: Subscription | undefined;
   //TRocar esses nomes
@@ -22,16 +25,6 @@ export class BudgetSavedComponent implements OnInit {
     this.subscription = this.data.currentMessage.subscribe(
       (message) => (this.message = message)
     );
-    this.go();
   }
-
-  go() {
-    const { lux, sun, moon } = this.message;
-    this.lux = lux;
-    this.sun = sun;
-    this.moon = moon;
-    console.log(this.message.a);
-    console.log(this.message.c);
-    console.log(this.message);
-  }
+  CloseLoginPopup() {}
 }

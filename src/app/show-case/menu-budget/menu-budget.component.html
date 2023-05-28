@@ -1,12 +1,20 @@
-<h3>{{ fixedBudget[0].budgetTitle }}</h3>
-<p>{{ fixedBudget[0].serviceDescription }}</p>
-<p>{{ fixedBudget[0].InitialPrice }}</p>
-<p>{{ fixedBudget[0].deadline }}</p>
+<h3>{{ fixedBudget.budgetTitle }}</h3>
+<p>{{ fixedBudget.serviceDescription }}</p>
+<p>{{ fixedBudget.InitialPrice }}</p>
+<p>{{ fixedBudget.deadline }}</p>
+
 <app-check
-  [initialValue]="fixedBudget[0].InitialPrice"
+  [initialValue]="fixedBudget.InitialPrice"
   (parentFunction)="parentFunction($event)"
 ></app-check>
 <p>
   Valor final <span>{{ TotalValueBudget }}</span>
 </p>
-<button (click)="saveBudget()" routerLink="../../summary">Salvar</button>
+<button (click)="saveBudget()">Salvar</button>
+<app-budget-saved
+  *ngIf="budgetChosed"
+  [newDataBudget]="newDataBudget"
+  [TotalValueBudget]="TotalValueBudget"
+  [fixedBudget]="fixedBudget"
+>
+</app-budget-saved>

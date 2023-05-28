@@ -19,14 +19,14 @@ export class MenuBudgetComponent {
   subscription: Subscription | undefined;
 
   constructor(private user: ApiService, private data: DataService) {}
-
+  budgetChosed: boolean = false;
   TotalValue: pessoa = {
     nome: '',
     idade: 0,
     profissao: '',
   };
   // @Input() extraItensBudget: CheckBoxList[] = [];
-  @Input() fixedBudget: FixedBudget[];
+  @Input() fixedBudget: FixedBudget;
   TotalValueBudget: number = 0;
   newDataBudget: CheckBoxList[] = [];
 
@@ -42,10 +42,6 @@ export class MenuBudgetComponent {
     this.newDataBudget = newData;
   }
   saveBudget() {
-    this.data.changeMessage({
-      a: this.newDataBudget,
-      b: this.TotalValueBudget,
-      c: this.fixedBudget,
-    });
+    this.budgetChosed = true;
   }
 }

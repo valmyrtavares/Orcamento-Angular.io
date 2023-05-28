@@ -4,18 +4,18 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { CheckBoxList } from 'src/app/model';
 
-interface checkBox {
-  text: string;
-  value: number;
-  check: boolean;
-  valueChange: number;
-  title: string;
-}
-interface pessoa {
-  nome: string;
-  idade: number;
-  profissao: string;
-}
+// interface checkBox {
+//   text: string;
+//   value: number;
+//   check: boolean;
+//   valueChange: number;
+//   title: string;
+// }
+// interface pessoa {
+//   nome: string;
+//   idade: number;
+//   profissao: string;
+// }
 
 @Component({
   selector: 'app-check',
@@ -30,10 +30,12 @@ export class CheckComponent implements OnInit {
   //   profissao: 'programador',
   // };
   constructor(private http: HttpClient, private route: ActivatedRoute) {
+    console.log('ESTAMOS DENTRO');
     this.id = this.route.snapshot.params['id']; //Como pegar a rota e colocar em uma variável
+    this.getDataExtraItens();
   }
   ngOnInit() {
-    this.getDataExtraItens();
+    console.log('ESTAMOS DENTRO DO ON INIT');
   }
 
   total: number = 0;

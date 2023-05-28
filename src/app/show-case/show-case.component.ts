@@ -18,13 +18,8 @@ export class ShowCaseComponent implements OnInit {
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];
   fixedBudget: FixedBudget[] = [];
+  fixedBudgetObj: FixedBudget;
 
-  // fixedBudget: FixedBudget = {
-  //   title: '',
-  //   text: '',
-  //   entregaPrazo: '',
-  //   valorInicial: 0,
-  // };
   constructor(
     private route: ActivatedRoute,
     private user: ApiService,
@@ -106,6 +101,13 @@ export class ShowCaseComponent implements OnInit {
       )
       .subscribe((res) => {
         this.fixedBudget = res.filter((item) => item.category === this.id);
+        this.fixedBudgetObj = {
+          InitialPrice: this.fixedBudget[0].InitialPrice,
+          budgetTitle: this.fixedBudget[0].budgetTitle,
+          category: this.fixedBudget[0].category,
+          deadline: this.fixedBudget[0].deadline,
+          serviceDescription: this.fixedBudget[0].serviceDescription,
+        };
       });
   }
 

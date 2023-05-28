@@ -5,6 +5,7 @@ export interface FixedBudget {
   deadline: string;
   serviceDescription: string;
 }
+
 export interface CheckBoxList {
   serviceDescription: string;
   serviceValue: number;

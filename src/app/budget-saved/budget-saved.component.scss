@@ -7,4 +7,19 @@
     padding: 0 20px;
     box-sizing: border-box;
     //border: 1px solid red;
+    box-shadow: 5px 5px 100px 10px rgba(0,0,0,0.9);
+}
+.budget-saved{
+    position: absolute;
+    top:35px;
+    left:5%;
+    .summary_budget{
+       
+        h2{
+            text-align: center;
+            margin: 10%;
+        }
+
+    }
+
 }

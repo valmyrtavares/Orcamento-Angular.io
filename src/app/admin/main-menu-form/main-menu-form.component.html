@@ -1,5 +1,7 @@
 <div class="container all-itens">
-  <p>CLique sobre os campos e mude a sua imagem e label do seu menu pricipal</p>
+  <p>
+    CLique ssv sobre os campos e mude a sua imagem e label do seu menu pricipal
+  </p>
   <ng-container *ngFor="let item of mainMenus">
     <div (click)="changeMainMenu(item.type, item.image)" class="one-content">
       <img [src]="item.image" [alt]="item.type" />

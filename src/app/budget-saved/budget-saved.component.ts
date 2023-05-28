@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 import { FixedBudget, CheckBoxList } from '../model';
@@ -12,6 +12,7 @@ export class BudgetSavedComponent implements OnInit {
   @Input() fixedBudget: FixedBudget;
   @Input() newDataBudget: CheckBoxList[] = [];
   @Input() TotalValueBudget: number = 0;
+  @Output() closePopup: EventEmitter<boolean> = new EventEmitter();
   message: any;
   subscription: Subscription | undefined;
   //TRocar esses nomes
@@ -26,5 +27,7 @@ export class BudgetSavedComponent implements OnInit {
       (message) => (this.message = message)
     );
   }
-  CloseLoginPopup() {}
+  CloseLoginPopup() {
+    this.closePopup.emit();
+  }
 }

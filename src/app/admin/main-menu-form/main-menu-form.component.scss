@@ -1,0 +1,14 @@
+.all-itens{
+margin-top: 50px;
+    .one-content{
+        background-color: #e9dbdb;
+        margin:15px;
+        padding:3%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        img{
+            max-width: 100px;
+        };
+    }
+}

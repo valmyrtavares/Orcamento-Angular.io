@@ -42,6 +42,6 @@ export class MenuBudgetComponent {
     this.newDataBudget = newData;
   }
   saveBudget() {
-    this.budgetChosed = true;
+    this.budgetChosed = !this.budgetChosed;
   }
 }

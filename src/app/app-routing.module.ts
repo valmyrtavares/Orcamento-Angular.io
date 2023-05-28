@@ -9,6 +9,7 @@ import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
 import { PortifolioFormComponent } from './admin/portifolio-form/portifolio-form.component';
 import { ServiceBudgetFormComponent } from './admin/service-budget-form/service-budget-form.component';
 import { EditExtraServiceComponent } from './admin/edit-extra-service/edit-extra-service.component';
+import { MainMenuFormComponent } from './admin/main-menu-form/main-menu-form.component';
 
 const routes: Routes = [
   { path: 'events', component: SocialEventsComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'showcase/:id', component: ShowCaseComponent }, //rota com parametro
   { path: 'servicebudgetform', component: ServiceBudgetFormComponent },
   { path: 'editservice/:category', component: EditExtraServiceComponent },
+  { path: 'mainmenuform', component: MainMenuFormComponent },
 ];
 
 @NgModule({

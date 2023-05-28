@@ -1,20 +1,23 @@
-<h3>{{ fixedBudget.budgetTitle }}</h3>
-<p>{{ fixedBudget.serviceDescription }}</p>
-<p>{{ fixedBudget.InitialPrice }}</p>
-<p>{{ fixedBudget.deadline }}</p>
+<div class="container">
+  <h3>{{ fixedBudget.budgetTitle }}</h3>
+  <p>{{ fixedBudget.serviceDescription }}</p>
+  <p>{{ fixedBudget.InitialPrice }}</p>
+  <p>{{ fixedBudget.deadline }}</p>
 
-<app-check
-  [initialValue]="fixedBudget.InitialPrice"
-  (parentFunction)="parentFunction($event)"
-></app-check>
-<p>
-  Valor final <span>{{ TotalValueBudget }}</span>
-</p>
-<button (click)="saveBudget()">Salvar</button>
+  <app-check
+    [initialValue]="fixedBudget.InitialPrice"
+    (parentFunction)="parentFunction($event)"
+  ></app-check>
+  <p>
+    Valor final <span>{{ TotalValueBudget }}</span>
+  </p>
+  <button (click)="saveBudget()">Salvar</button>
+</div>
 <app-budget-saved
   *ngIf="budgetChosed"
   [newDataBudget]="newDataBudget"
   [TotalValueBudget]="TotalValueBudget"
   [fixedBudget]="fixedBudget"
+  (closePopup)="saveBudget()"
 >
 </app-budget-saved>

@@ -16,16 +16,15 @@ a param that choose the eventType array. This param is sending in URL .Each butt
 has your event param
 */
 export class SocialEventsComponent implements OnInit {
-  getEventType: EventType[] = [];
-  data: string = 'eventType';
+  eventTypeList: EventType[] = [];
   constructor(private user: ApiService, private http: HttpClient) {}
 
   ngOnInit() {
     // this.user.getSocialEvents('eventType').subscribe((res: any) => {
     //   this.eventType = res;
     // });
-    this.user.getData(this.data).subscribe((res: any) => {
-      this.getEventType = res;
+    this.user.getData('eventType').subscribe((res: any) => {
+      this.eventTypeList = res;
     });
   }
   //getMenu() {

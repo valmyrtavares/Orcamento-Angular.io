@@ -1,5 +1,5 @@
 <div class="show-case">
-  <ng-container *ngFor="let item of getEventType">
+  <ng-container *ngFor="let item of eventTypeList">
     <div [routerLink]="item.route + item.evento">
       <h3 class="show-case__title">{{ item.type }}</h3>
       <div class="img-content">

@@ -15,7 +15,7 @@ export class ApiService {
   getSocialEvents(id: string) {
     return this.http.get(`http://localhost:3000/${id}`);
   }
-  getData(data: any) {
+  getData(data: string) {
     return this.http
       .get(
         `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${data}.json`

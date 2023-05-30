@@ -1,5 +1,7 @@
-<div *ngIf="knownUser; else segs">
-  <app-user-form (createNewUser)="createNewUser($event)"></app-user-form>
+<div *ngIf="knownCustomer; else segs">
+  <app-customer-form
+    (createNewUser)="createNewUser($event)"
+  ></app-customer-form>
 </div>
 
 <ng-template #segs>

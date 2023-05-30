@@ -6,11 +6,11 @@ import { ApiService } from '../../api.service';
 import { map } from 'rxjs';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.scss'],
+  selector: 'app-customer-form',
+  templateUrl: './customer-form.component.html',
+  styleUrls: ['./customer-form.component.scss'],
 })
-export class UserFormComponent implements OnInit {
+export class CustomerFormComponent implements OnInit {
   customerIdBiggestNumber: number = 0;
   customerList: User[] = [];
   @Output() createNewUser: EventEmitter<boolean> = new EventEmitter();

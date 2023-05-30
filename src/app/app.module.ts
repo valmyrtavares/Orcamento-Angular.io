@@ -13,7 +13,7 @@ import { SocialEventsComponent } from './social-events/social-events.component';
 import { MobileButtonOptions } from './mobile-button-options/mobile-button-options';
 import { BudgetSavedComponent } from './budget-saved/budget-saved.component';
 import { HeaderComponent } from './header/header.component';
-import { UserFormComponent } from './show-case/user-form/user-form.component';
+import { CustomerFormComponent } from './show-case/user-form/customer-form.component';
 import { FormsModule } from '@angular/forms';
 import { PopupLoginAdminComponent } from './admin/popup-login-admin/popup-login-admin.component';
 import { MenuAdminComponent } from './admin/menu-admin/menu-admin.component';
@@ -34,7 +34,7 @@ import { MainMenuFormComponent } from './admin/main-menu-form/main-menu-form.com
     MobileButtonOptions,
     BudgetSavedComponent,
     HeaderComponent,
-    UserFormComponent,
+    CustomerFormComponent,
     PopupLoginAdminComponent,
     MenuAdminComponent,
     PortifolioFormComponent,

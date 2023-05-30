@@ -13,7 +13,7 @@ import { map } from 'rxjs';
 export class ShowCaseComponent implements OnInit {
   changeScreen: boolean = true;
   id: string;
-  knownUser: boolean = true;
+  knownCustomer: boolean = true;
   checkBoxList: CheckBoxList[] = [];
   dataEvent: Evento[] | null = [];
   showCase: ShowCase[] = [];
@@ -51,61 +51,14 @@ export class ShowCaseComponent implements OnInit {
         serviceDescription: this.fixedBudget[0].serviceDescription,
       };
     });
-    //this.getData(); // Função para pegar os dados da API ao iniciar o componente
-    /*Aqui temos um problema que é resolvido com o router.events acima. Toda vez que a rota
-    muda ele dispara o getData, porque estamos em uma singlepageAplication e por isso temos 
-    essa condição da do event que ao trocar vai trocar também as fotos do evento     
-    */
-
-    //this.getDataFixedBudget();
-    // this.getDataExtraItens();
   }
   checkCustomer() {
     if (localStorage.getItem('customer') != null) {
-      this.knownUser = false;
+      this.knownCustomer = false;
     }
   }
 
-  // getData() {
-  //   //Função para pegar os dados da API
-  //   this.id = this.route.snapshot.params['id']; //Como pegar a rota e colocar em uma variável
-  //   this.user.getSocialEvents(this.id).subscribe((res: any) => {
-  //     const { showCase, fixedBudget, checkBoxList } = res;
-  //     this.showCase = showCase;
-  //     //  this.fixedBudget = fixedBudget;
-  //     this.checkBoxList = checkBoxList;
-  //   });
-  // }
-
-  // getDataFixedBudget() {
-  //   this.http
-  //     .get(
-  //       'https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/fixedBudget.json'
-  //     )
-  //     .pipe(
-  //       map((res) => {
-  //         const fixedBudget = [];
-  //         for (const key in res) {
-  //           if (res.hasOwnProperty(key)) {
-  //             fixedBudget.push({ ...res[key], id: key });
-  //           }
-  //         }
-  //         return fixedBudget;
-  //       })
-  //     )
-  //     .subscribe((res) => {
-  //       this.fixedBudget = res.filter((item) => item.category === this.id);
-  //       this.fixedBudgetObj = {
-  //         InitialPrice: this.fixedBudget[0].InitialPrice,
-  //         budgetTitle: this.fixedBudget[0].budgetTitle,
-  //         category: this.fixedBudget[0].category,
-  //         deadline: this.fixedBudget[0].deadline,
-  //         serviceDescription: this.fixedBudget[0].serviceDescription,
-  //       };
-  //     });
-  // }
-
   createNewUser(open: boolean) {
-    this.knownUser = open;
+    this.knownCustomer = open;
   }
 }

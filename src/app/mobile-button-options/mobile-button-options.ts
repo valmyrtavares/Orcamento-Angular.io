@@ -13,6 +13,7 @@ import { map } from 'rxjs';
 export class MobileButtonOptions {
   showLoginPopup: boolean = false;
   openMenu: boolean = false;
+  data: string = 'eventType';
   getEventType: EventType[] = [];
   constructor(private user: ApiService, private http: HttpClient) {}
 
@@ -21,7 +22,10 @@ export class MobileButtonOptions {
     //   const { showCase, fixedBudget, checkBoxList } = res;
     //   this.getEventType = res;
     // });
-    this.getMenu();
+    //this.getMenu();
+    this.user.getData(this.data).subscribe((res: any) => {
+      this.getEventType = res;
+    });
   }
   displayLoginPopup() {
     this.showLoginPopup = !this.showLoginPopup;

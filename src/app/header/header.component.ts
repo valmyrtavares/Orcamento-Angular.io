@@ -10,13 +10,12 @@ export class HeaderComponent implements OnInit {
   user: string = '';
 
   ngOnInit(): void {
-    this.hellowUser();
+    this.helloUser();
   }
 
-  hellowUser() {
+  helloUser() {
     if (localStorage.hasOwnProperty('customer')) {
       this.user = JSON.parse(localStorage.getItem('customer'));
-      console.log(this.user);
     }
   }
 }
